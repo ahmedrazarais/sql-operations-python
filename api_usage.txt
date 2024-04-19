@@ -1,0 +1,46 @@
+API Documentation for Your API Name
+====================================
+
+Overview:
+---------
+Provide a brief overview or introduction to your API.
+
+Endpoints:
+----------
+1. Retrieve all records
+    - URL: /project
+    - Method: GET
+    - Description: Retrieve all records from the 'admin' table.
+    - Response:
+        - Success: Status code 200 with a list of dictionaries representing the retrieved records.
+        - Failure: Status code 404 if no records found.
+
+2. Add a new record
+    - URL: /project
+    - Method: POST
+    - Description: Add a new record to the 'admin' table.
+    - Request Body:
+        - id (int): The ID of the new record.
+        - name (str): The name of the new record.
+        - city (str): The city of the new record.
+        - subject (str): The subject of the new record.
+    - Response:
+        - Success: Status code 201 with a success message if the data is added successfully.
+        - Failure: Status code 400 if the provided ID already exists.
+
+3. Delete a record
+    - URL: /project/<int:input_id>
+    - Method: DELETE
+    - Description: Delete a record from the 'admin' table based on the provided ID.
+    - Response:
+        - Success: Status code 201 with a success message if the record is deleted successfully.
+        - Failure: Status code 404 if the record is not found in the database.
+
+4. Update a record
+    - URL: /project/<int:row_id>
+    - Method: PUT
+    - Description: Update a record in the 'admin' table based on the provided ID.
+    - Request Body: JSON data with fields to be updated.
+    - Response:
+        - Success: Status code 200 with a success message if the record is updated successfully.
+        - Failure: Status code 400 if no data is provided for update, or status code 500 for internal server error.
